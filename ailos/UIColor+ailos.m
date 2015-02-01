@@ -40,7 +40,11 @@
 }
 
 + (UIColor *)buttonBackground {
-    return [self colorWithHexValue:@"8c8c8c"];
+    return [self colorWithHexValue:@"20bfa3"];
+}
+
++ (UIColor *)buttonTextColor {
+    return [self colorWithHexValue:@"ffffff"];
 }
 
 + (UIColor *)secondaryButtonBackground {

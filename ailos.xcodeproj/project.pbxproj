@@ -21,6 +21,7 @@
 		4B1ED8611A7DBCC70049ADFA /* AIConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8601A7DBCC70049ADFA /* AIConstants.m */; };
 		4B1ED8661A7DC12E0049ADFA /* AIBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8651A7DC12E0049ADFA /* AIBaseView.m */; };
 		4B1ED8691A7EB7120049ADFA /* UIColor+ailos.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8681A7EB7120049ADFA /* UIColor+ailos.m */; };
+		4B1ED86C1A7EC4C00049ADFA /* AIUIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED86B1A7EC4C00049ADFA /* AIUIFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		4B1ED8651A7DC12E0049ADFA /* AIBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIBaseView.m; sourceTree = "<group>"; };
 		4B1ED8671A7EB7120049ADFA /* UIColor+ailos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ailos.h"; sourceTree = "<group>"; };
 		4B1ED8681A7EB7120049ADFA /* UIColor+ailos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ailos.m"; sourceTree = "<group>"; };
+		4B1ED86A1A7EC4C00049ADFA /* AIUIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUIFactory.h; sourceTree = "<group>"; };
+		4B1ED86B1A7EC4C00049ADFA /* AIUIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIUIFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +230,8 @@
 			children = (
 				4B1ED8671A7EB7120049ADFA /* UIColor+ailos.h */,
 				4B1ED8681A7EB7120049ADFA /* UIColor+ailos.m */,
+				4B1ED86A1A7EC4C00049ADFA /* AIUIFactory.h */,
+				4B1ED86B1A7EC4C00049ADFA /* AIUIFactory.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				4B1ED8231A7D9EAF0049ADFA /* main.m in Sources */,
 				4B1ED82C1A7D9EAF0049ADFA /* ViewController.m in Sources */,
 				4B1ED85E1A7DBB2F0049ADFA /* AIBaseViewController.m in Sources */,
+				4B1ED86C1A7EC4C00049ADFA /* AIUIFactory.m in Sources */,
 				4B1ED8691A7EB7120049ADFA /* UIColor+ailos.m in Sources */,
 				4B1ED8291A7D9EAF0049ADFA /* ailos.xcdatamodeld in Sources */,
 				4B1ED85B1A7DB8D50049ADFA /* AIHomeView.m in Sources */,

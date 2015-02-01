@@ -8,12 +8,9 @@
 
 #import "AIHomeView.h"
 #import "UIColor+ailos.h"
-
+#import "AIUIFactory.h"
 @interface AIHomeView ()
 @property (strong, nonatomic) UIView *containerView;
-
-
-
 @end
 
 
@@ -24,30 +21,22 @@
 
 	if (self) {
 		_scanButton = ({
-			UIButton *button = [[UIButton alloc] init];
-			[button setTitle:@"Scan" forState:UIControlStateNormal];
-			[button setTranslatesAutoresizingMaskIntoConstraints:NO];
-            button.backgroundColor = [UIColor buttonBackground];
-			button;
+            UIButton *button = [AIUIFactory createStandardButton:@"Scan"];
+            button;
 		});
 
 		_dataInputButton = ({
-			UIButton *button = [[UIButton alloc] init];
-			[button setTitle:@"Add Data" forState:UIControlStateNormal];
-			[button setTranslatesAutoresizingMaskIntoConstraints:NO];
-            button.backgroundColor = [UIColor buttonBackground];
-			button;
+            UIButton *button = [AIUIFactory createStandardButton:@"All Data"];
+            button;
 		});
 
 		_containerView = ({
-			UIView *view = [[UIView alloc] init];
-			view.backgroundColor = [UIColor screenBackgroundColor];
+            UIView *view = [AIUIFactory createView];
 			[view addSubview:_scanButton];
 			[view addSubview:_dataInputButton];
-			[view setTranslatesAutoresizingMaskIntoConstraints:NO];
-
 			view;
 		});
+        
 		[self addSubview:_containerView];
 	}
 	return self;
@@ -72,8 +61,6 @@
 
 	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[scanButton]-|" options:0 metrics:nil views:self.views]];
 	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[dataInputButton]-|" options:0 metrics:nil views:self.views]];
-
-
 
 	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[scanButton(44)]-[dataInputButton(44)]" options:0 metrics:nil views:self.views]];
 }

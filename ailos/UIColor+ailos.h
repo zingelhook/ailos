@@ -17,5 +17,6 @@
 + (UIColor *)screenBackgroundColor;
 + (UIColor *)tableSectionHeaderColor;
 + (UIColor *)buttonBackground;
++ (UIColor *)buttonTextColor;
 + (UIColor *)secondaryButtonBackground;
 @end
