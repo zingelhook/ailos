@@ -22,6 +22,9 @@
 		4B1ED8661A7DC12E0049ADFA /* AIBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8651A7DC12E0049ADFA /* AIBaseView.m */; };
 		4B1ED8691A7EB7120049ADFA /* UIColor+ailos.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8681A7EB7120049ADFA /* UIColor+ailos.m */; };
 		4B1ED86C1A7EC4C00049ADFA /* AIUIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED86B1A7EC4C00049ADFA /* AIUIFactory.m */; };
+		4B1ED86F1A7ECA5B0049ADFA /* AIBarcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED86E1A7ECA5B0049ADFA /* AIBarcode.m */; };
+		4B1ED8721A7ECBD20049ADFA /* AIScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8711A7ECBD20049ADFA /* AIScannerViewController.m */; };
+		4B1ED8751A7ED4340049ADFA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1ED8741A7ED4340049ADFA /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,11 @@
 		4B1ED8681A7EB7120049ADFA /* UIColor+ailos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ailos.m"; sourceTree = "<group>"; };
 		4B1ED86A1A7EC4C00049ADFA /* AIUIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUIFactory.h; sourceTree = "<group>"; };
 		4B1ED86B1A7EC4C00049ADFA /* AIUIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIUIFactory.m; sourceTree = "<group>"; };
+		4B1ED86D1A7ECA5B0049ADFA /* AIBarcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIBarcode.h; sourceTree = "<group>"; };
+		4B1ED86E1A7ECA5B0049ADFA /* AIBarcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIBarcode.m; sourceTree = "<group>"; };
+		4B1ED8701A7ECBD20049ADFA /* AIScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIScannerViewController.h; sourceTree = "<group>"; };
+		4B1ED8711A7ECBD20049ADFA /* AIScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIScannerViewController.m; sourceTree = "<group>"; };
+		4B1ED8741A7ED4340049ADFA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1ED8751A7ED4340049ADFA /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +95,7 @@
 		4B1ED8141A7D9EAF0049ADFA = {
 			isa = PBXGroup;
 			children = (
+				4B1ED8741A7ED4340049ADFA /* AVFoundation.framework */,
 				4B1ED81F1A7D9EAF0049ADFA /* ailos */,
 				4B1ED83C1A7D9EB00049ADFA /* ailosTests */,
 				4B1ED81E1A7D9EAF0049ADFA /* Products */,
@@ -151,6 +161,7 @@
 		4B1ED84A1A7DA9060049ADFA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4B1ED8731A7ECBDA0049ADFA /* Scanner */,
 				4B1ED8541A7DAAB20049ADFA /* Home */,
 				4B1ED82A1A7D9EAF0049ADFA /* ViewController.h */,
 				4B1ED82B1A7D9EAF0049ADFA /* ViewController.m */,
@@ -165,6 +176,8 @@
 			children = (
 				4B1ED85F1A7DBCC70049ADFA /* AIConstants.h */,
 				4B1ED8601A7DBCC70049ADFA /* AIConstants.m */,
+				4B1ED86D1A7ECA5B0049ADFA /* AIBarcode.h */,
+				4B1ED86E1A7ECA5B0049ADFA /* AIBarcode.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -259,6 +272,15 @@
 				4B1ED85A1A7DB8D50049ADFA /* AIHomeView.m */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		4B1ED8731A7ECBDA0049ADFA /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				4B1ED8701A7ECBD20049ADFA /* AIScannerViewController.h */,
+				4B1ED8711A7ECBD20049ADFA /* AIScannerViewController.m */,
+			);
+			name = Scanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +387,7 @@
 				4B1ED8571A7DAAFB0049ADFA /* AIHomeViewController.m in Sources */,
 				4B1ED8261A7D9EAF0049ADFA /* AppDelegate.m in Sources */,
 				4B1ED8231A7D9EAF0049ADFA /* main.m in Sources */,
+				4B1ED86F1A7ECA5B0049ADFA /* AIBarcode.m in Sources */,
 				4B1ED82C1A7D9EAF0049ADFA /* ViewController.m in Sources */,
 				4B1ED85E1A7DBB2F0049ADFA /* AIBaseViewController.m in Sources */,
 				4B1ED86C1A7EC4C00049ADFA /* AIUIFactory.m in Sources */,
@@ -372,6 +395,7 @@
 				4B1ED8291A7D9EAF0049ADFA /* ailos.xcdatamodeld in Sources */,
 				4B1ED85B1A7DB8D50049ADFA /* AIHomeView.m in Sources */,
 				4B1ED8611A7DBCC70049ADFA /* AIConstants.m in Sources */,
+				4B1ED8721A7ECBD20049ADFA /* AIScannerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

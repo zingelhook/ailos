@@ -8,6 +8,7 @@
 
 #import "AIHomeViewController.h"
 #import "AIHomeView.h"
+#import "AIScannerViewController.h"
 @interface AIHomeViewController ()
 @property (nonatomic,strong) AIHomeView *homeView;
 @end
@@ -40,10 +41,15 @@
     if(!_homeView){
         _homeView = [[AIHomeView alloc]init];
         [_homeView setTranslatesAutoresizingMaskIntoConstraints:NO];
-
+        [_homeView.scanButton addTarget:self action:@selector(scanAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _homeView;
 }
 
+- (void)scanAction:(id)sender {
+    UIViewController *controller = [[AIScannerViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:controller animated:YES];
+   // [self logEventForAnalyticsWithCategory:ANALYTICS_CATEGORY_ADDOBJECT action:@"Cancel" label:ANALYTICS_OBJECT_FORM value:nil];
+}
 
 @end

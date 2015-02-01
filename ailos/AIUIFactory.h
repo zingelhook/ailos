@@ -14,5 +14,5 @@
 + (UIView *)createHRLine;
 + (UIView *)createView;
 + (UIButton *)createStandardButton:(NSString *)text;
-+ (UIButton *)createSecondaryButton:(NSString *)text
++ (UIButton *)createSecondaryButton:(NSString *)text;
 @end
