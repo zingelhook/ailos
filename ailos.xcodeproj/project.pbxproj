@@ -15,6 +15,12 @@
 		4B1ED8311A7D9EAF0049ADFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1ED8301A7D9EAF0049ADFA /* Images.xcassets */; };
 		4B1ED8341A7D9EAF0049ADFA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1ED8321A7D9EAF0049ADFA /* LaunchScreen.xib */; };
 		4B1ED8401A7D9EB00049ADFA /* ailosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED83F1A7D9EB00049ADFA /* ailosTests.m */; };
+		4B1ED8571A7DAAFB0049ADFA /* AIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8561A7DAAFB0049ADFA /* AIHomeViewController.m */; };
+		4B1ED85B1A7DB8D50049ADFA /* AIHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED85A1A7DB8D50049ADFA /* AIHomeView.m */; };
+		4B1ED85E1A7DBB2F0049ADFA /* AIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED85D1A7DBB2F0049ADFA /* AIBaseViewController.m */; };
+		4B1ED8611A7DBCC70049ADFA /* AIConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8601A7DBCC70049ADFA /* AIConstants.m */; };
+		4B1ED8661A7DC12E0049ADFA /* AIBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8651A7DC12E0049ADFA /* AIBaseView.m */; };
+		4B1ED8691A7EB7120049ADFA /* UIColor+ailos.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8681A7EB7120049ADFA /* UIColor+ailos.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +48,18 @@
 		4B1ED8391A7D9EB00049ADFA /* ailosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ailosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B1ED83E1A7D9EB00049ADFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B1ED83F1A7D9EB00049ADFA /* ailosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ailosTests.m; sourceTree = "<group>"; };
+		4B1ED8551A7DAAFB0049ADFA /* AIHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIHomeViewController.h; sourceTree = "<group>"; };
+		4B1ED8561A7DAAFB0049ADFA /* AIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIHomeViewController.m; sourceTree = "<group>"; };
+		4B1ED8591A7DB8D50049ADFA /* AIHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIHomeView.h; sourceTree = "<group>"; };
+		4B1ED85A1A7DB8D50049ADFA /* AIHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIHomeView.m; sourceTree = "<group>"; };
+		4B1ED85C1A7DBB2F0049ADFA /* AIBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIBaseViewController.h; sourceTree = "<group>"; };
+		4B1ED85D1A7DBB2F0049ADFA /* AIBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIBaseViewController.m; sourceTree = "<group>"; };
+		4B1ED85F1A7DBCC70049ADFA /* AIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIConstants.h; sourceTree = "<group>"; };
+		4B1ED8601A7DBCC70049ADFA /* AIConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIConstants.m; sourceTree = "<group>"; };
+		4B1ED8641A7DC12E0049ADFA /* AIBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIBaseView.h; sourceTree = "<group>"; };
+		4B1ED8651A7DC12E0049ADFA /* AIBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIBaseView.m; sourceTree = "<group>"; };
+		4B1ED8671A7EB7120049ADFA /* UIColor+ailos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ailos.h"; sourceTree = "<group>"; };
+		4B1ED8681A7EB7120049ADFA /* UIColor+ailos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ailos.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +101,8 @@
 		4B1ED81F1A7D9EAF0049ADFA /* ailos */ = {
 			isa = PBXGroup;
 			children = (
-				4B1ED8241A7D9EAF0049ADFA /* AppDelegate.h */,
-				4B1ED8251A7D9EAF0049ADFA /* AppDelegate.m */,
-				4B1ED82A1A7D9EAF0049ADFA /* ViewController.h */,
-				4B1ED82B1A7D9EAF0049ADFA /* ViewController.m */,
+				4B1ED84D1A7DA96D0049ADFA /* Resources */,
+				4B1ED84C1A7DA92B0049ADFA /* Classes */,
 				4B1ED82D1A7D9EAF0049ADFA /* Main.storyboard */,
 				4B1ED8301A7D9EAF0049ADFA /* Images.xcassets */,
 				4B1ED8321A7D9EAF0049ADFA /* LaunchScreen.xib */,
@@ -120,6 +136,124 @@
 				4B1ED83E1A7D9EB00049ADFA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4B1ED8491A7DA8FA0049ADFA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		4B1ED84A1A7DA9060049ADFA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B1ED8541A7DAAB20049ADFA /* Home */,
+				4B1ED82A1A7D9EAF0049ADFA /* ViewController.h */,
+				4B1ED82B1A7D9EAF0049ADFA /* ViewController.m */,
+				4B1ED85C1A7DBB2F0049ADFA /* AIBaseViewController.h */,
+				4B1ED85D1A7DBB2F0049ADFA /* AIBaseViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4B1ED84B1A7DA9170049ADFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B1ED85F1A7DBCC70049ADFA /* AIConstants.h */,
+				4B1ED8601A7DBCC70049ADFA /* AIConstants.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4B1ED84C1A7DA92B0049ADFA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4B1ED84A1A7DA9060049ADFA /* Controllers */,
+				4B1ED84F1A7DA9AC0049ADFA /* Application */,
+				4B1ED8491A7DA8FA0049ADFA /* Data */,
+				4B1ED8501A7DA9D00049ADFA /* Delegate */,
+				4B1ED8531A7DA9F30049ADFA /* ViewModels */,
+				4B1ED8521A7DA9EC0049ADFA /* Utils */,
+				4B1ED8511A7DA9DD0049ADFA /* Services */,
+				4B1ED84E1A7DA9990049ADFA /* Views */,
+				4B1ED84B1A7DA9170049ADFA /* Models */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		4B1ED84D1A7DA96D0049ADFA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4B1ED84E1A7DA9990049ADFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B1ED8581A7DB8B10049ADFA /* Home */,
+				4B1ED8641A7DC12E0049ADFA /* AIBaseView.h */,
+				4B1ED8651A7DC12E0049ADFA /* AIBaseView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4B1ED84F1A7DA9AC0049ADFA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4B1ED8241A7D9EAF0049ADFA /* AppDelegate.h */,
+				4B1ED8251A7D9EAF0049ADFA /* AppDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		4B1ED8501A7DA9D00049ADFA /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		4B1ED8511A7DA9DD0049ADFA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4B1ED8521A7DA9EC0049ADFA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4B1ED8671A7EB7120049ADFA /* UIColor+ailos.h */,
+				4B1ED8681A7EB7120049ADFA /* UIColor+ailos.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		4B1ED8531A7DA9F30049ADFA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		4B1ED8541A7DAAB20049ADFA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4B1ED8551A7DAAFB0049ADFA /* AIHomeViewController.h */,
+				4B1ED8561A7DAAFB0049ADFA /* AIHomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		4B1ED8581A7DB8B10049ADFA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4B1ED8591A7DB8D50049ADFA /* AIHomeView.h */,
+				4B1ED85A1A7DB8D50049ADFA /* AIHomeView.m */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,10 +356,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1ED8661A7DC12E0049ADFA /* AIBaseView.m in Sources */,
+				4B1ED8571A7DAAFB0049ADFA /* AIHomeViewController.m in Sources */,
 				4B1ED8261A7D9EAF0049ADFA /* AppDelegate.m in Sources */,
 				4B1ED8231A7D9EAF0049ADFA /* main.m in Sources */,
 				4B1ED82C1A7D9EAF0049ADFA /* ViewController.m in Sources */,
+				4B1ED85E1A7DBB2F0049ADFA /* AIBaseViewController.m in Sources */,
+				4B1ED8691A7EB7120049ADFA /* UIColor+ailos.m in Sources */,
 				4B1ED8291A7D9EAF0049ADFA /* ailos.xcdatamodeld in Sources */,
+				4B1ED85B1A7DB8D50049ADFA /* AIHomeView.m in Sources */,
+				4B1ED8611A7DBCC70049ADFA /* AIConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

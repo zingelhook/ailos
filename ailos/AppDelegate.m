@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "AIHomeViewController.h"
+#import "UIColor+ailos.h"
 @interface AppDelegate ()
 
 @end
@@ -16,8 +17,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setupGlobalStyles];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    UIViewController *startController = [[AIHomeViewController alloc]init];
+    
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:startController];
+    [self.window makeKeyAndVisible];
+ ;
     return YES;
+}
+
+- (void)setupGlobalStyles {
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
+    [[UINavigationBar appearance] setTintColor:[UIColor appTintColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor appTintColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    self.window.tintColor = [UIColor appTintColor];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
