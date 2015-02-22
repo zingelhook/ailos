@@ -8,6 +8,8 @@
 
 #import "AIBaseViewController.h"
 #import "AIConstants.h"
+#import "AIService.h"
+
 @interface AIBaseViewController ()
 
 @end
@@ -16,6 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (AISession *)session {
+    if (!_session) {
+        _session = [AISession getInstance];
+    }
+    return _session;
+}
+
+- (AIService *)service {
+    if(!_service){
+        _service = [[AIService alloc]init];
+    }
+    return _service;
 }
 
 - (NSMutableDictionary *)metrics {
@@ -27,7 +43,6 @@
     }
     return _metrics;
 }
-
 
 - (NSMutableDictionary *)views {
     if (!_views) {

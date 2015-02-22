@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AIHomeViewController : UIViewController
+#import "AIBaseViewController.h"
+@interface AIHomeViewController : AIBaseViewController
 
 @end

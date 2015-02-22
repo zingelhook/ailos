@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AISession.h"
+#import "AIService.h"
 
 @interface AIBaseViewController : UIViewController
 @property (strong, nonatomic) NSMutableDictionary *metrics;
 @property (strong, nonatomic) NSMutableDictionary *views;
+@property (strong, nonatomic) AISession *session;
+@property (strong, nonatomic) AIService *service;
 @end

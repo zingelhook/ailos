@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AIScannerViewController : UIViewController 
+#import "AIBaseViewController.h"
+@interface AIScannerViewController : AIBaseViewController
 
 @end

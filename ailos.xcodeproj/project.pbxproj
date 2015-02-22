@@ -10,7 +10,6 @@
 		4B1ED8231A7D9EAF0049ADFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8221A7D9EAF0049ADFA /* main.m */; };
 		4B1ED8261A7D9EAF0049ADFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8251A7D9EAF0049ADFA /* AppDelegate.m */; };
 		4B1ED8291A7D9EAF0049ADFA /* ailos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8271A7D9EAF0049ADFA /* ailos.xcdatamodeld */; };
-		4B1ED82C1A7D9EAF0049ADFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED82B1A7D9EAF0049ADFA /* ViewController.m */; };
 		4B1ED82F1A7D9EAF0049ADFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B1ED82D1A7D9EAF0049ADFA /* Main.storyboard */; };
 		4B1ED8311A7D9EAF0049ADFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1ED8301A7D9EAF0049ADFA /* Images.xcassets */; };
 		4B1ED8341A7D9EAF0049ADFA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1ED8321A7D9EAF0049ADFA /* LaunchScreen.xib */; };
@@ -25,6 +24,18 @@
 		4B1ED86F1A7ECA5B0049ADFA /* AIBarcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED86E1A7ECA5B0049ADFA /* AIBarcode.m */; };
 		4B1ED8721A7ECBD20049ADFA /* AIScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED8711A7ECBD20049ADFA /* AIScannerViewController.m */; };
 		4B1ED8751A7ED4340049ADFA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1ED8741A7ED4340049ADFA /* AVFoundation.framework */; };
+		4B74EAFA1A993727009AA7FF /* AIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B74EAF91A993727009AA7FF /* AIService.m */; };
+		4B823FCA1A997591000ED3E0 /* AIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FC91A997591000ED3E0 /* AIProfile.m */; };
+		4B823FCD1A99782B000ED3E0 /* AINutrient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FCC1A99782B000ED3E0 /* AINutrient.m */; };
+		4B823FD01A99790F000ED3E0 /* AIAllergen.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FCF1A99790F000ED3E0 /* AIAllergen.m */; };
+		4B823FD31A997CDB000ED3E0 /* AIProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FD21A997CDB000ED3E0 /* AIProduct.m */; };
+		4B823FD61A9981B7000ED3E0 /* AIProductSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FD51A9981B7000ED3E0 /* AIProductSearchResult.m */; };
+		4B823FD91A998780000ED3E0 /* AIAdditive.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FD81A998780000ED3E0 /* AIAdditive.m */; };
+		4B823FDC1A9988C8000ED3E0 /* AIProcingredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FDB1A9988C8000ED3E0 /* AIProcingredient.m */; };
+		4B823FDF1A998CF9000ED3E0 /* AIAllergenAdditve.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FDE1A998CF9000ED3E0 /* AIAllergenAdditve.m */; };
+		4BAF463D1A993DFD00971EAC /* AISession.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF463C1A993DFD00971EAC /* AISession.m */; };
+		4BAF46401A995C7D00971EAC /* AIUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF463F1A995C7D00971EAC /* AIUser.m */; };
+		5DED7940B47FEDEE60099CC6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EED145A3E8DB191B41E33AE7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +55,6 @@
 		4B1ED8241A7D9EAF0049ADFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4B1ED8251A7D9EAF0049ADFA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4B1ED8281A7D9EAF0049ADFA /* ailos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ailos.xcdatamodel; sourceTree = "<group>"; };
-		4B1ED82A1A7D9EAF0049ADFA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4B1ED82B1A7D9EAF0049ADFA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4B1ED82E1A7D9EAF0049ADFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B1ED8301A7D9EAF0049ADFA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4B1ED8331A7D9EAF0049ADFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -71,6 +80,31 @@
 		4B1ED8701A7ECBD20049ADFA /* AIScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIScannerViewController.h; sourceTree = "<group>"; };
 		4B1ED8711A7ECBD20049ADFA /* AIScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIScannerViewController.m; sourceTree = "<group>"; };
 		4B1ED8741A7ED4340049ADFA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4B74EAF81A993727009AA7FF /* AIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIService.h; sourceTree = "<group>"; };
+		4B74EAF91A993727009AA7FF /* AIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIService.m; sourceTree = "<group>"; };
+		4B823FC81A997591000ED3E0 /* AIProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIProfile.h; sourceTree = "<group>"; };
+		4B823FC91A997591000ED3E0 /* AIProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIProfile.m; sourceTree = "<group>"; };
+		4B823FCB1A99782B000ED3E0 /* AINutrient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AINutrient.h; sourceTree = "<group>"; };
+		4B823FCC1A99782B000ED3E0 /* AINutrient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AINutrient.m; sourceTree = "<group>"; };
+		4B823FCE1A99790F000ED3E0 /* AIAllergen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAllergen.h; sourceTree = "<group>"; };
+		4B823FCF1A99790F000ED3E0 /* AIAllergen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIAllergen.m; sourceTree = "<group>"; };
+		4B823FD11A997CDB000ED3E0 /* AIProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIProduct.h; sourceTree = "<group>"; };
+		4B823FD21A997CDB000ED3E0 /* AIProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIProduct.m; sourceTree = "<group>"; };
+		4B823FD41A9981B7000ED3E0 /* AIProductSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIProductSearchResult.h; sourceTree = "<group>"; };
+		4B823FD51A9981B7000ED3E0 /* AIProductSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIProductSearchResult.m; sourceTree = "<group>"; };
+		4B823FD71A998780000ED3E0 /* AIAdditive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAdditive.h; sourceTree = "<group>"; };
+		4B823FD81A998780000ED3E0 /* AIAdditive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIAdditive.m; sourceTree = "<group>"; };
+		4B823FDA1A9988C8000ED3E0 /* AIProcingredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIProcingredient.h; sourceTree = "<group>"; };
+		4B823FDB1A9988C8000ED3E0 /* AIProcingredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIProcingredient.m; sourceTree = "<group>"; };
+		4B823FDD1A998CF9000ED3E0 /* AIAllergenAdditve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAllergenAdditve.h; sourceTree = "<group>"; };
+		4B823FDE1A998CF9000ED3E0 /* AIAllergenAdditve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIAllergenAdditve.m; sourceTree = "<group>"; };
+		4BAF463B1A993DFD00971EAC /* AISession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISession.h; sourceTree = "<group>"; };
+		4BAF463C1A993DFD00971EAC /* AISession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AISession.m; sourceTree = "<group>"; };
+		4BAF463E1A995C7D00971EAC /* AIUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUser.h; sourceTree = "<group>"; };
+		4BAF463F1A995C7D00971EAC /* AIUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIUser.m; sourceTree = "<group>"; };
+		D9530F02E38F64268A57CEFE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EED145A3E8DB191B41E33AE7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA9674B659472AF8F11836C4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1ED8751A7ED4340049ADFA /* AVFoundation.framework in Frameworks */,
+				5DED7940B47FEDEE60099CC6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +127,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		334FC8D76F9805EAABB60035 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA9674B659472AF8F11836C4 /* Pods.debug.xcconfig */,
+				D9530F02E38F64268A57CEFE /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4AFFFA35C5E7740A8CAD4402 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EED145A3E8DB191B41E33AE7 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4B1ED8141A7D9EAF0049ADFA = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +151,8 @@
 				4B1ED81F1A7D9EAF0049ADFA /* ailos */,
 				4B1ED83C1A7D9EB00049ADFA /* ailosTests */,
 				4B1ED81E1A7D9EAF0049ADFA /* Products */,
+				334FC8D76F9805EAABB60035 /* Pods */,
+				4AFFFA35C5E7740A8CAD4402 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,8 +217,6 @@
 			children = (
 				4B1ED8731A7ECBDA0049ADFA /* Scanner */,
 				4B1ED8541A7DAAB20049ADFA /* Home */,
-				4B1ED82A1A7D9EAF0049ADFA /* ViewController.h */,
-				4B1ED82B1A7D9EAF0049ADFA /* ViewController.m */,
 				4B1ED85C1A7DBB2F0049ADFA /* AIBaseViewController.h */,
 				4B1ED85D1A7DBB2F0049ADFA /* AIBaseViewController.m */,
 			);
@@ -178,6 +230,26 @@
 				4B1ED8601A7DBCC70049ADFA /* AIConstants.m */,
 				4B1ED86D1A7ECA5B0049ADFA /* AIBarcode.h */,
 				4B1ED86E1A7ECA5B0049ADFA /* AIBarcode.m */,
+				4BAF463B1A993DFD00971EAC /* AISession.h */,
+				4BAF463C1A993DFD00971EAC /* AISession.m */,
+				4BAF463E1A995C7D00971EAC /* AIUser.h */,
+				4BAF463F1A995C7D00971EAC /* AIUser.m */,
+				4B823FC81A997591000ED3E0 /* AIProfile.h */,
+				4B823FC91A997591000ED3E0 /* AIProfile.m */,
+				4B823FCB1A99782B000ED3E0 /* AINutrient.h */,
+				4B823FCC1A99782B000ED3E0 /* AINutrient.m */,
+				4B823FCE1A99790F000ED3E0 /* AIAllergen.h */,
+				4B823FCF1A99790F000ED3E0 /* AIAllergen.m */,
+				4B823FD11A997CDB000ED3E0 /* AIProduct.h */,
+				4B823FD21A997CDB000ED3E0 /* AIProduct.m */,
+				4B823FD41A9981B7000ED3E0 /* AIProductSearchResult.h */,
+				4B823FD51A9981B7000ED3E0 /* AIProductSearchResult.m */,
+				4B823FD71A998780000ED3E0 /* AIAdditive.h */,
+				4B823FD81A998780000ED3E0 /* AIAdditive.m */,
+				4B823FDA1A9988C8000ED3E0 /* AIProcingredient.h */,
+				4B823FDB1A9988C8000ED3E0 /* AIProcingredient.m */,
+				4B823FDD1A998CF9000ED3E0 /* AIAllergenAdditve.h */,
+				4B823FDE1A998CF9000ED3E0 /* AIAllergenAdditve.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -234,6 +306,8 @@
 		4B1ED8511A7DA9DD0049ADFA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4B74EAF81A993727009AA7FF /* AIService.h */,
+				4B74EAF91A993727009AA7FF /* AIService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -290,9 +364,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B1ED8431A7D9EB00049ADFA /* Build configuration list for PBXNativeTarget "ailos" */;
 			buildPhases = (
+				293B0FA21D30664422033EC8 /* Check Pods Manifest.lock */,
 				4B1ED8191A7D9EAF0049ADFA /* Sources */,
 				4B1ED81A1A7D9EAF0049ADFA /* Frameworks */,
 				4B1ED81B1A7D9EAF0049ADFA /* Resources */,
+				F6CD211AD88A0E7F53A257C0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -378,23 +454,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		293B0FA21D30664422033EC8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F6CD211AD88A0E7F53A257C0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4B1ED8191A7D9EAF0049ADFA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B74EAFA1A993727009AA7FF /* AIService.m in Sources */,
+				4B823FCA1A997591000ED3E0 /* AIProfile.m in Sources */,
 				4B1ED8661A7DC12E0049ADFA /* AIBaseView.m in Sources */,
 				4B1ED8571A7DAAFB0049ADFA /* AIHomeViewController.m in Sources */,
 				4B1ED8261A7D9EAF0049ADFA /* AppDelegate.m in Sources */,
+				4BAF46401A995C7D00971EAC /* AIUser.m in Sources */,
 				4B1ED8231A7D9EAF0049ADFA /* main.m in Sources */,
 				4B1ED86F1A7ECA5B0049ADFA /* AIBarcode.m in Sources */,
-				4B1ED82C1A7D9EAF0049ADFA /* ViewController.m in Sources */,
 				4B1ED85E1A7DBB2F0049ADFA /* AIBaseViewController.m in Sources */,
+				4B823FCD1A99782B000ED3E0 /* AINutrient.m in Sources */,
 				4B1ED86C1A7EC4C00049ADFA /* AIUIFactory.m in Sources */,
+				4B823FD01A99790F000ED3E0 /* AIAllergen.m in Sources */,
 				4B1ED8691A7EB7120049ADFA /* UIColor+ailos.m in Sources */,
 				4B1ED8291A7D9EAF0049ADFA /* ailos.xcdatamodeld in Sources */,
+				4B823FDC1A9988C8000ED3E0 /* AIProcingredient.m in Sources */,
+				4B823FD91A998780000ED3E0 /* AIAdditive.m in Sources */,
 				4B1ED85B1A7DB8D50049ADFA /* AIHomeView.m in Sources */,
 				4B1ED8611A7DBCC70049ADFA /* AIConstants.m in Sources */,
+				4B823FD31A997CDB000ED3E0 /* AIProduct.m in Sources */,
+				4BAF463D1A993DFD00971EAC /* AISession.m in Sources */,
+				4B823FDF1A998CF9000ED3E0 /* AIAllergenAdditve.m in Sources */,
+				4B823FD61A9981B7000ED3E0 /* AIProductSearchResult.m in Sources */,
 				4B1ED8721A7ECBD20049ADFA /* AIScannerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +634,7 @@
 		};
 		4B1ED8441A7D9EB00049ADFA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9674B659472AF8F11836C4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ailos/Info.plist;
@@ -525,6 +645,7 @@
 		};
 		4B1ED8451A7D9EB00049ADFA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9530F02E38F64268A57CEFE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ailos/Info.plist;
@@ -586,6 +707,7 @@
 				4B1ED8451A7D9EB00049ADFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B1ED8461A7D9EB00049ADFA /* Build configuration list for PBXNativeTarget "ailosTests" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +716,7 @@
 				4B1ED8481A7D9EB00049ADFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
