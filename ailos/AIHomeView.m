@@ -26,7 +26,7 @@
 		});
 
 		_dataInputButton = ({
-            UIButton *button = [AIUIFactory createStandardButton:@"All Data"];
+            UIButton *button = [AIUIFactory createStandardButton:@"Set Profile"];
             button;
 		});
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
 @interface AIAdditive : NSObject
 @property (nonatomic, strong) NSString *additiveName;

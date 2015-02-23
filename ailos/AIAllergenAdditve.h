@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
-@interface AIAllergenAdditve : NSObject
+@interface AIAllergenAdditve :  MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong) NSString *upc;
 @property (nonatomic, strong) NSString *property;
 @property (nonatomic, strong) NSString *propertyType;

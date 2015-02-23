@@ -7,7 +7,17 @@
 //
 
 #import "AIProductSearchResult.h"
-
+#import "AIProduct.h"
 @implementation AIProductSearchResult
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+	return @{
+			   @"products": @"products"
+	};
+}
+
++ (NSValueTransformer *)productsJSONTransformer {
+	return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:AIProduct.class];
+}
 
 @end

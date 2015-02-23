@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
-@interface AIUser : NSObject
+@interface AIUser :  MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong)NSString *uId;
 @end

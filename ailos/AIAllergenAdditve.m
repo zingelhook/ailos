@@ -14,9 +14,9 @@
 	self = [super init];
 
 	if (self) {
-		self.upc = [JSON objectForKey:@"upc"];
-		self.property = [JSON objectForKey:@"property"];
-		self.propertyType = [JSON objectForKey:@"propType"];
+		_upc = [JSON objectForKey:@"upc"];
+		_property = [JSON objectForKey:@"property"];
+		_propertyType = [JSON objectForKey:@"propType"];
 
 
 		NSMutableArray *redIngredients = [[NSMutableArray alloc]init];
@@ -24,16 +24,28 @@
 			[redIngredients addObject:nutrientJSON];
 		}
 
-		self.redIngredients = [redIngredients copy];
+		_redIngredients = [redIngredients copy];
 
 		NSMutableArray *yellowIngredients = [[NSMutableArray alloc]init];
 		for (NSArray *nutrientJSON in JSON[@"yellowIngredients"]) {
 			[yellowIngredients addObject:nutrientJSON];
 		}
 
-		self.yellowIngredients = [yellowIngredients copy];
+		_yellowIngredients = [yellowIngredients copy];
 	}
 	return self;
 }
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+	return @{
+			   @"upc": @"upc",
+			   @"property": @"property",
+			   @"propertyType": @"propType",
+               @"redIngredients": @"redIngredients",
+               @"yellowIngredients": @"yellowIngredients"
+	};
+}
+
+
 
 @end

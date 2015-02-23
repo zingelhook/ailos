@@ -14,12 +14,21 @@
 	self = [super init];
 
 	if (self) {
-		self.additiveName = [JSON objectForKey:@"additive_name"];
-		self.additiveValue = [JSON objectForKey:@"additive_value"];
-		self.additiveRedIngredients = [JSON objectForKey:@"additive_red_ingredients"];
-		self.additiveYellowIngredients = [JSON objectForKey:@"additive_yellow_ingredients"];
+		_additiveName = [JSON objectForKey:@"additive_name"];
+		_additiveValue = [JSON objectForKey:@"additive_value"];
+		_additiveRedIngredients = [JSON objectForKey:@"additive_red_ingredients"];
+		_additiveYellowIngredients = [JSON objectForKey:@"additive_yellow_ingredients"];
 	}
 	return self;
+}
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+	return @{
+			   @"additiveName": @"additive_name",
+			   @"additiveValue": @"additive_value",
+			   @"additiveRedIngredients": @"additive_red_ingredients",
+			   @"additiveYellowIngredients": @"additive_yellow_ingredients"
+	};
 }
 
 @end

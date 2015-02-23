@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
-@interface AIProcingredient : NSObject
+@interface AIProcingredient :  MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *value;
 @property (nonatomic, strong) NSString *ingredientid;

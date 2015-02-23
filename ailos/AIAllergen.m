@@ -13,10 +13,17 @@
 	self = [super init];
 
 	if (self) {
-		self.name = [JSON objectForKey:@"name"];
-		self.value = [[JSON objectForKey:@"value"] boolValue];
+		_name = [JSON objectForKey:@"name"];
+		_value = [[JSON objectForKey:@"value"] boolValue];
 	}
 	return self;
+}
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+	return @{
+			   @"name": @"name",
+			   @"value": @"value"
+	};
 }
 
 @end

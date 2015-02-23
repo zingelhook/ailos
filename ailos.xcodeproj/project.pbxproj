@@ -33,6 +33,14 @@
 		4B823FD91A998780000ED3E0 /* AIAdditive.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FD81A998780000ED3E0 /* AIAdditive.m */; };
 		4B823FDC1A9988C8000ED3E0 /* AIProcingredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FDB1A9988C8000ED3E0 /* AIProcingredient.m */; };
 		4B823FDF1A998CF9000ED3E0 /* AIAllergenAdditve.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FDE1A998CF9000ED3E0 /* AIAllergenAdditve.m */; };
+		4B823FE21A9A3CB8000ED3E0 /* AIMyIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FE11A9A3CB8000ED3E0 /* AIMyIngredient.m */; };
+		4B823FE51A9A409A000ED3E0 /* AIMySort.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FE41A9A409A000ED3E0 /* AIMySort.m */; };
+		4BABA8731A9A73B90032EAA3 /* AIEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA8721A9A73B90032EAA3 /* AIEditProfileViewController.m */; };
+		4BABA8771A9A763E0032EAA3 /* AIEditProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA8761A9A763E0032EAA3 /* AIEditProfileView.m */; };
+		4BABA87E1A9A8AAD0032EAA3 /* AITableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA87D1A9A8AAD0032EAA3 /* AITableSection.m */; };
+		4BABA8821A9A8BA90032EAA3 /* AITableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA8811A9A8BA90032EAA3 /* AITableCell.m */; };
+		4BABA8851A9A8D680032EAA3 /* AITableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA8841A9A8D680032EAA3 /* AITableRow.m */; };
+		4BABA8881A9A997E0032EAA3 /* AIEditProfileViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA8871A9A997E0032EAA3 /* AIEditProfileViewModel.m */; };
 		4BAF463D1A993DFD00971EAC /* AISession.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF463C1A993DFD00971EAC /* AISession.m */; };
 		4BAF46401A995C7D00971EAC /* AIUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF463F1A995C7D00971EAC /* AIUser.m */; };
 		5DED7940B47FEDEE60099CC6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EED145A3E8DB191B41E33AE7 /* libPods.a */; };
@@ -98,6 +106,22 @@
 		4B823FDB1A9988C8000ED3E0 /* AIProcingredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIProcingredient.m; sourceTree = "<group>"; };
 		4B823FDD1A998CF9000ED3E0 /* AIAllergenAdditve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAllergenAdditve.h; sourceTree = "<group>"; };
 		4B823FDE1A998CF9000ED3E0 /* AIAllergenAdditve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIAllergenAdditve.m; sourceTree = "<group>"; };
+		4B823FE01A9A3CB8000ED3E0 /* AIMyIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMyIngredient.h; sourceTree = "<group>"; };
+		4B823FE11A9A3CB8000ED3E0 /* AIMyIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMyIngredient.m; sourceTree = "<group>"; };
+		4B823FE31A9A409A000ED3E0 /* AIMySort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMySort.h; sourceTree = "<group>"; };
+		4B823FE41A9A409A000ED3E0 /* AIMySort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMySort.m; sourceTree = "<group>"; };
+		4BABA8711A9A73B90032EAA3 /* AIEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIEditProfileViewController.h; sourceTree = "<group>"; };
+		4BABA8721A9A73B90032EAA3 /* AIEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIEditProfileViewController.m; sourceTree = "<group>"; };
+		4BABA8751A9A763E0032EAA3 /* AIEditProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIEditProfileView.h; sourceTree = "<group>"; };
+		4BABA8761A9A763E0032EAA3 /* AIEditProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIEditProfileView.m; sourceTree = "<group>"; };
+		4BABA87C1A9A8AAD0032EAA3 /* AITableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AITableSection.h; sourceTree = "<group>"; };
+		4BABA87D1A9A8AAD0032EAA3 /* AITableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AITableSection.m; sourceTree = "<group>"; };
+		4BABA8801A9A8BA90032EAA3 /* AITableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AITableCell.h; sourceTree = "<group>"; };
+		4BABA8811A9A8BA90032EAA3 /* AITableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AITableCell.m; sourceTree = "<group>"; };
+		4BABA8831A9A8D680032EAA3 /* AITableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AITableRow.h; sourceTree = "<group>"; };
+		4BABA8841A9A8D680032EAA3 /* AITableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AITableRow.m; sourceTree = "<group>"; };
+		4BABA8861A9A997E0032EAA3 /* AIEditProfileViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIEditProfileViewModel.h; sourceTree = "<group>"; };
+		4BABA8871A9A997E0032EAA3 /* AIEditProfileViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIEditProfileViewModel.m; sourceTree = "<group>"; };
 		4BAF463B1A993DFD00971EAC /* AISession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISession.h; sourceTree = "<group>"; };
 		4BAF463C1A993DFD00971EAC /* AISession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AISession.m; sourceTree = "<group>"; };
 		4BAF463E1A995C7D00971EAC /* AIUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUser.h; sourceTree = "<group>"; };
@@ -215,6 +239,7 @@
 		4B1ED84A1A7DA9060049ADFA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4BABA8701A9A73820032EAA3 /* Profile */,
 				4B1ED8731A7ECBDA0049ADFA /* Scanner */,
 				4B1ED8541A7DAAB20049ADFA /* Home */,
 				4B1ED85C1A7DBB2F0049ADFA /* AIBaseViewController.h */,
@@ -250,6 +275,10 @@
 				4B823FDB1A9988C8000ED3E0 /* AIProcingredient.m */,
 				4B823FDD1A998CF9000ED3E0 /* AIAllergenAdditve.h */,
 				4B823FDE1A998CF9000ED3E0 /* AIAllergenAdditve.m */,
+				4B823FE01A9A3CB8000ED3E0 /* AIMyIngredient.h */,
+				4B823FE11A9A3CB8000ED3E0 /* AIMyIngredient.m */,
+				4B823FE31A9A409A000ED3E0 /* AIMySort.h */,
+				4B823FE41A9A409A000ED3E0 /* AIMySort.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -280,9 +309,11 @@
 		4B1ED84E1A7DA9990049ADFA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4BABA8741A9A75CD0032EAA3 /* Profile */,
 				4B1ED8581A7DB8B10049ADFA /* Home */,
 				4B1ED8641A7DC12E0049ADFA /* AIBaseView.h */,
 				4B1ED8651A7DC12E0049ADFA /* AIBaseView.m */,
+				4BABA87F1A9A8AB40032EAA3 /* Tables */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -326,6 +357,8 @@
 		4B1ED8531A7DA9F30049ADFA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4BABA8861A9A997E0032EAA3 /* AIEditProfileViewModel.h */,
+				4BABA8871A9A997E0032EAA3 /* AIEditProfileViewModel.m */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -355,6 +388,37 @@
 				4B1ED8711A7ECBD20049ADFA /* AIScannerViewController.m */,
 			);
 			name = Scanner;
+			sourceTree = "<group>";
+		};
+		4BABA8701A9A73820032EAA3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4BABA8711A9A73B90032EAA3 /* AIEditProfileViewController.h */,
+				4BABA8721A9A73B90032EAA3 /* AIEditProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		4BABA8741A9A75CD0032EAA3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4BABA8751A9A763E0032EAA3 /* AIEditProfileView.h */,
+				4BABA8761A9A763E0032EAA3 /* AIEditProfileView.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		4BABA87F1A9A8AB40032EAA3 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				4BABA87C1A9A8AAD0032EAA3 /* AITableSection.h */,
+				4BABA87D1A9A8AAD0032EAA3 /* AITableSection.m */,
+				4BABA8801A9A8BA90032EAA3 /* AITableCell.h */,
+				4BABA8811A9A8BA90032EAA3 /* AITableCell.m */,
+				4BABA8831A9A8D680032EAA3 /* AITableRow.h */,
+				4BABA8841A9A8D680032EAA3 /* AITableRow.m */,
+			);
+			name = Tables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,9 +563,14 @@
 				4B1ED8261A7D9EAF0049ADFA /* AppDelegate.m in Sources */,
 				4BAF46401A995C7D00971EAC /* AIUser.m in Sources */,
 				4B1ED8231A7D9EAF0049ADFA /* main.m in Sources */,
+				4B823FE51A9A409A000ED3E0 /* AIMySort.m in Sources */,
 				4B1ED86F1A7ECA5B0049ADFA /* AIBarcode.m in Sources */,
+				4BABA8771A9A763E0032EAA3 /* AIEditProfileView.m in Sources */,
+				4BABA8881A9A997E0032EAA3 /* AIEditProfileViewModel.m in Sources */,
+				4BABA87E1A9A8AAD0032EAA3 /* AITableSection.m in Sources */,
 				4B1ED85E1A7DBB2F0049ADFA /* AIBaseViewController.m in Sources */,
 				4B823FCD1A99782B000ED3E0 /* AINutrient.m in Sources */,
+				4BABA8851A9A8D680032EAA3 /* AITableRow.m in Sources */,
 				4B1ED86C1A7EC4C00049ADFA /* AIUIFactory.m in Sources */,
 				4B823FD01A99790F000ED3E0 /* AIAllergen.m in Sources */,
 				4B1ED8691A7EB7120049ADFA /* UIColor+ailos.m in Sources */,
@@ -512,6 +581,9 @@
 				4B1ED8611A7DBCC70049ADFA /* AIConstants.m in Sources */,
 				4B823FD31A997CDB000ED3E0 /* AIProduct.m in Sources */,
 				4BAF463D1A993DFD00971EAC /* AISession.m in Sources */,
+				4BABA8821A9A8BA90032EAA3 /* AITableCell.m in Sources */,
+				4B823FE21A9A3CB8000ED3E0 /* AIMyIngredient.m in Sources */,
+				4BABA8731A9A73B90032EAA3 /* AIEditProfileViewController.m in Sources */,
 				4B823FDF1A998CF9000ED3E0 /* AIAllergenAdditve.m in Sources */,
 				4B823FD61A9981B7000ED3E0 /* AIProductSearchResult.m in Sources */,
 				4B1ED8721A7ECBD20049ADFA /* AIScannerViewController.m in Sources */,

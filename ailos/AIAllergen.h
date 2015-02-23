@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
-@interface AIAllergen : NSObject
+@interface AIAllergen :  MTLModel <MTLJSONSerializing>
 @property (strong, nonatomic) NSString *name;
 @property (assign, nonatomic) BOOL value;
 - (id)initWithJSON:(id)JSON;

@@ -26,16 +26,7 @@ static AISession *instance = nil;
 	_version = [JSON objectForKey:@"version"];
     _userId = [JSON objectForKey:@"user_id"];
 }
-/*
-+ (instancetype)sharedSession {
-	static dispatch_once_t once;
-	static id sharedInstance;
-	dispatch_once(&once, ^{
-		sharedInstance = [[self alloc] init];
-	});
-	return sharedInstance;
-}
- */
+
 + (AISession *)getInstance {
     @synchronized(self)
     {

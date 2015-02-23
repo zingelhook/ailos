@@ -96,9 +96,8 @@
 		}
 
 		if (detectionString != nil) {
-		
-            [self getProduct:detectionString];
-            
+			[self getProduct:detectionString];
+
 			break;
 		}
 		else
@@ -108,21 +107,17 @@
 	_highlightView.frame = highlightViewRect;
 }
 
--(void)getProduct:(NSString *)upcCode{
-    
-    	_label.text = upcCode;
-    void (^success)(AIAllergenAdditve *) = ^void (AIAllergenAdditve *allergenAdditve) {
-        //self.session = session;
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    };
-    
-    void (^failure)(NSError *) = ^void (NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    };
+- (void)getProduct:(NSString *)upcCode {
+	_label.text = upcCode;
+	void (^success)(AIAllergenAdditve *) = ^void (AIAllergenAdditve *allergenAdditve) {
+		[MBProgressHUD hideHUDForView:self.view animated:YES];
+	};
 
-   [self.service getAllergenAdditive:success failure:failure sessionId:[AISession getInstance].sessionId upc:upcCode property:@"corn" propertyType:@"allergen"];
+	void (^failure)(NSError *) = ^void (NSError *error) {
+		[MBProgressHUD hideHUDForView:self.view animated:YES];
+	};
 
-
+	[self.service getAllergenAdditive:success failure:failure sessionId:[AISession getInstance].sessionId upc:upcCode property:@"corn" propertyType:@"allergen"];
 }
 
 @end

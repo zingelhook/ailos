@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
-@interface AIProduct : NSObject
+@interface AIProduct :  MTLModel <MTLJSONSerializing>
 @property (strong, nonatomic) NSString *upc;
 @property (assign, nonatomic) BOOL isInMyList;
 @property (strong, nonatomic) NSString *productName;

@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "AIProduct.h"
+#import <Mantle/Mantle.h>
 
-@interface AIProductSearchResult : NSObject
+@interface AIProductSearchResult :  MTLModel <MTLJSONSerializing>
 @property (nonatomic,strong) NSArray *products;
 @end

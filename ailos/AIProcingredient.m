@@ -14,11 +14,19 @@
 	self = [super init];
 
 	if (self) {
-		self.name = [JSON objectForKey:@"name"];
-		self.value = [JSON objectForKey:@"value"];
-		self.ingredientid = [JSON objectForKey:@"ingredientid"];
+		_name = [JSON objectForKey:@"name"];
+		_value = [JSON objectForKey:@"value"];
+		_ingredientid = [JSON objectForKey:@"ingredientid"];
 	}
 	return self;
+}
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+	return @{
+			   @"name": @"name",
+			   @"value": @"value",
+			   @"propertyType": @"ingredientid"
+	};
 }
 
 @end

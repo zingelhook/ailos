@@ -14,15 +14,27 @@
 	self = [super init];
 
 	if (self) {
-		self.upc = [JSON objectForKey:@"upc"];
-		self.isInMyList = [[JSON objectForKey:@"isInMyList"] boolValue];
-		self.productName = [JSON objectForKey:@"product_name"];
-		self.productDescription = [JSON objectForKey:@"product_description"];
-		self.brand = [JSON objectForKey:@"brand"];
-		self.manufacturer = [JSON objectForKey:@"manufacturer"];
-		self.productSize = [JSON objectForKey:@"product_size"];
+		_upc = [JSON objectForKey:@"upc"];
+		_isInMyList = [[JSON objectForKey:@"isInMyList"] boolValue];
+		_productName = [JSON objectForKey:@"product_name"];
+		_productDescription = [JSON objectForKey:@"product_description"];
+		_brand = [JSON objectForKey:@"brand"];
+		_manufacturer = [JSON objectForKey:@"manufacturer"];
+		_productSize = [JSON objectForKey:@"product_size"];
 	}
 	return self;
+}
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+	return @{
+			   @"upc": @"upc",
+			   @"isInMyList": @"isInMyList",
+			   @"productName": @"product_name",
+			   @"productDescription": @"product_description",
+			   @"brand": @"brand",
+               @"manufacturer": @"manufacturer",
+               @"productSize": @"product_size"
+	};
 }
 
 @end

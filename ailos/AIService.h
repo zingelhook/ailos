@@ -20,6 +20,9 @@ typedef void (^SessionFailure)(NSError *);
 typedef void (^GetProfileSuccess)(AIProfile *);
 typedef void (^GetProfileFailure)(NSError *);
 
+typedef void (^SetProfileSuccess)(BOOL);
+typedef void (^SetProfileFailure)(NSError *);
+
 typedef void (^SearchProductsSuccess)(AIProductSearchResult *);
 typedef void (^SearchProductsFailure)(NSError *);
 

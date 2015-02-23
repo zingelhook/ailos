@@ -12,6 +12,7 @@
 #import "AISession.h"
 #import "AIService.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "AIEditProfileViewController.h"
 
 @interface AIHomeViewController ()
 @property (nonatomic, strong) AIHomeView *homeView;
@@ -38,7 +39,7 @@
 
 - (void)loadView {
 	self.view = self.homeView;
-	[self.homeView updateConstraints];
+    [self.homeView setNeedsUpdateConstraints];
 }
 
 
@@ -61,6 +62,7 @@
 		_homeView = [[AIHomeView alloc]init];
 		[_homeView setTranslatesAutoresizingMaskIntoConstraints:NO];
 		[_homeView.scanButton addTarget:self action:@selector(scanAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_homeView.dataInputButton addTarget:self action:@selector(profileAction:) forControlEvents:UIControlEventTouchUpInside];
 	}
 	return _homeView;
 }
@@ -68,6 +70,11 @@
 - (void)scanAction:(id)sender {
 	UIViewController *controller = [[AIScannerViewController alloc] initWithNibName:nil bundle:nil];
 	[self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)profileAction:(id)sender {
+    UIViewController *controller = [[AIEditProfileViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end
