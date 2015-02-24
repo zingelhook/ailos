@@ -75,21 +75,28 @@
 	}];
 }
 
-//setprofile
-- (void)setProfile:(GetProfileSuccess)success failure:(GetProfileFailure)failure json:(NSString *)json {
+/*
+ This is used to initially set or to update the dietary profile. Use the Set Profile (setprofile) and Add My Ingredient (addmyingredient) methods to customize your profile. It must be sent in JSON format. There is a detailed walk-through of the profile on our Getting Started page (also see FAQ: Profiles).
+ */
+- (void)setProfile:(GetProfileSuccess)success failure:(GetProfileFailure)failure json:(AIProfile *)json {
 	NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, @"setprofile"];
 	NSMutableString *mutableURL = [[NSMutableString alloc]init];
 	[mutableURL appendString:url];
-	[mutableURL appendString:[NSString stringWithFormat:@"&api_key=%@", API_KEY]];
-	[mutableURL appendString:[NSString stringWithFormat:@"&json=%@", json]];
-
-	[self.manager GET:mutableURL parameters:nil success: ^(AFHTTPRequestOperation *operation, id responseObject) {
-	    AIProfile *profile = [[AIProfile alloc]initWithJSON:responseObject];
-
-	    if (success) success(profile);
-	} failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
-	    NSLog(@"adf");
-	}];
+	[mutableURL appendString:[NSString stringWithFormat:@"?api_key=%@", API_KEY]];
+    
+    NSDictionary *JSONDictionary = [MTLJSONAdapter JSONDictionaryFromModel:json];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:JSONDictionary options:0 error:nil];
+    NSString *JSONstr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    AFHTTPRequestOperationManager *mmanager = [AFHTTPRequestOperationManager manager];
+    
+    [mmanager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    NSDictionary *parameters = @{@"json": JSONstr};
+    [mmanager POST:mutableURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 /*

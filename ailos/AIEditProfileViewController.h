@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AIBaseViewController.h"
-@interface AIEditProfileViewController : AIBaseViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate, UIAlertViewDelegate>
+#import "AIProfileDelegate.h"
+@interface AIEditProfileViewController : AIBaseViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate, UIAlertViewDelegate, AIProfileDelegate>
+//@property (nonatomic, weak) id<AIProfileDelegate> profileChangeDelegate;
 
 @end

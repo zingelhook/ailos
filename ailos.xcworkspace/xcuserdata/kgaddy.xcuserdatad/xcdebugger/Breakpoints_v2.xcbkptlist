@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ailos/AIService.m"
-            timestampString = "446334350.761945"
+            timestampString = "446441421.330865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "-getAllergenAdditive:failure:sessionId:upc:property:propertyType:"
             landmarkType = "5">
          </BreakpointContent>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ailos/AIEditProfileViewController.m"
-            timestampString = "446342950.948479"
+            filePath = "ailos/AIService.m"
+            timestampString = "446436656.383189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "-tableView:viewForHeaderInSection:"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-getProfile:failure:session:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

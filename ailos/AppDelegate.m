@@ -31,7 +31,7 @@
 - (void)setupGlobalStyles {
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
-    [[UINavigationBar appearance] setTintColor:[UIColor appTintColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor appTintColor]];
     [[UINavigationBar appearance] setTranslucent:NO];
     self.window.tintColor = [UIColor appTintColor];

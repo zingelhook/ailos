@@ -1,20 +1,19 @@
 //
-//  AIEditProfileView.m
+//  AINutrientsView.m
 //  ailos
 //
 //  Created by kgaddy on 2/22/15.
 //  Copyright (c) 2015 com.zingelhook. All rights reserved.
 //
 
-#import "AIEditProfileView.h"
+#import "AINutrientsView.h"
 
-@interface AIEditProfileView ()
+@interface AINutrientsView ()
 @property (strong, nonatomic) UIView *contentView;
 @property (assign, nonatomic) BOOL didApplyConstraints;
 @end
 
-@implementation AIEditProfileView
-
+@implementation AINutrientsView
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -50,7 +49,7 @@
 }
 
 - (void)updateViewDictionary {
-
+    
     [self.views setObject:self.tableView forKey:@"tableView"];
     [self.views setObject:self.contentView forKey:@"contentView"];
 }

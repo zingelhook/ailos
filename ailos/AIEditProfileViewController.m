@@ -9,10 +9,12 @@
 #import "AIEditProfileViewController.h"
 #import "AIEditProfileView.h"
 #import <MBProgressHUD/MBProgressHUD.h>
-#import "AITableCell.h" 
+#import "AITableCell.h"
 #import "AITableSection.h"
 #import "AITableRow.h"
 #import "AIEditProfileViewModel.h"
+#import "AIProfileDelegate.h"
+#import "AIProfileNutrientList.h"
 
 @interface AIEditProfileViewController ()
 @property (nonatomic, strong) AIEditProfileView *mainView;
@@ -32,7 +34,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-    [self loadProfile];
+	[self loadProfile];
 }
 
 - (void)loadView {
@@ -53,141 +55,159 @@
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	[self.service getProfile: ^(AIProfile *profile) {
 	    [MBProgressHUD hideHUDForView:self.view animated:YES];
-        self.profile = profile;
-        self.viewModel = [[AIEditProfileViewModel alloc]initWithProfile:profile];
+	    self.profile = profile;
+	    self.viewModel = [[AIEditProfileViewModel alloc]initWithProfile:profile];
 	    [self.mainView.tableView reloadData];
 	}
 	                 failure: ^(NSError *error) {
 	    NSLog(@"error");
 	} session:self.session];
-
 }
 
 - (NSArray *)tableSections {
-    NSMutableArray *sections = [[NSMutableArray  alloc] init];
-    
-    [sections addObject:[self createNutrientSection]];
-       _tableSections = sections;
-    
-    return _tableSections;
+	NSMutableArray *sections = [[NSMutableArray  alloc] init];
+
+	[sections addObject:[self createNutrientSection]];
+	_tableSections = sections;
+
+	return _tableSections;
 }
 
-#pragma mark Memo Section
+- (void)launchNutrientScreen {
+    AIProfileNutrientList *filterVC = [[AIProfileNutrientList alloc] initWithApplyBlock: ^(NSMutableArray *nutrients) {
+
+        self.profile.nutrients = [nutrients copy];
+        //call set profile here
+        void (^success)(AIProfile *) = ^void (AIProfile *profile) {
+        
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        };
+        
+        void (^failure)(NSError *) = ^void (NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        };
+        
+
+        [self.service setProfile:success failure:failure json:self.profile];
+        
+     
+    } cancelBlock:nil
+                                                                                          nutrients:self.profile.nutrients];
+    [filterVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:filterVC];
+    [self presentViewController:navigationController animated:YES completion:nil];
+
+}
+
+#pragma mark nutrient Section
 - (AITableSection *)createNutrientSection {
-    AITableSection *section = [[AITableSection alloc] init];
-    section.headerView = nil;
-    AITableRow *nutrientRow = [self createNutrientRow];
-    section.rows = @[nutrientRow];
-    return section;
+	AITableSection *section = [[AITableSection alloc] init];
+	section.headerView = nil;
+	AITableRow *nutrientRow = [self createNutrientRow];
+	section.rows = @[nutrientRow];
+	return section;
 }
 
 - (AITableRow *)createNutrientRow {
-    AITableRow *row = [[AITableRow alloc] init];
-    
-    __weak typeof(self) weakSelf = self;
-    
-    row.loadCell = ^UITableViewCell * (NSIndexPath *indexPath, BOOL hasError) {
-        return [weakSelf createNutrientCellAtIndex:indexPath hasError:hasError text:self.viewModel.nutrientCellText];
-    };
-    
-    row.validateRow = ^NSString * (NSIndexPath *indexPath) {
-        NSString *error;
-        return error;
-    };
-    
-    return row;
-}
+	AITableRow *row = [[AITableRow alloc] init];
 
+	__weak typeof(self) weakSelf = self;
+
+	row.loadCell = ^UITableViewCell * (NSIndexPath *indexPath, BOOL hasError) {
+		return [weakSelf createNutrientCellAtIndex:indexPath hasError:hasError text:self.viewModel.nutrientCellText];
+	};
+
+	row.didSelectRow = ^(NSIndexPath *indexPath) {
+		[self launchNutrientScreen];
+	};
+
+	return row;
+}
 
 - (UITableViewCell *)createNutrientCellAtIndex:(NSIndexPath *)index hasError:(BOOL)error text:(NSString *)text {
-    UITableViewCell *cell = [self.mainView.tableView dequeueReusableCellWithIdentifier:@"nutrientsCell"];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]init];
-    }
+	UITableViewCell *cell = [self.mainView.tableView dequeueReusableCellWithIdentifier:@"nutrientsCell"];
 
-    cell.textLabel.text = text;
-    return cell;
+	if (cell == nil) {
+		cell = [[UITableViewCell alloc]init];
+	}
+
+	cell.textLabel.text = text;
+	return cell;
 }
-
-
-
-
 
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section < [self.tableSections count]) {
-        return [[[self.tableSections objectAtIndex:section] rows] count];
-    }
-    return 0;
+	if (section < [self.tableSections count]) {
+		return [[[self.tableSections objectAtIndex:section] rows] count];
+	}
+	return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell;
-    
-    AITableSection *tableSection = [self.tableSections objectAtIndex:indexPath.section];
-    AITableRow *tableRow = [tableSection.rows objectAtIndex:indexPath.row];
-    NSString *errorForCell = [self.tableErrors objectForKey:indexPath];
-    
-    if (tableRow.loadCell) cell = tableRow.loadCell(indexPath, errorForCell != nil);
-    
-    return cell;
+	UITableViewCell *cell;
+
+	AITableSection *tableSection = [self.tableSections objectAtIndex:indexPath.section];
+	AITableRow *tableRow = [tableSection.rows objectAtIndex:indexPath.row];
+	NSString *errorForCell = [self.tableErrors objectForKey:indexPath];
+
+	if (tableRow.loadCell) cell = tableRow.loadCell(indexPath, errorForCell != nil);
+
+	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    AITableSection *tableSection = [self.tableSections objectAtIndex:indexPath.section];
-    AITableRow *tableRow = [tableSection.rows objectAtIndex:indexPath.row];
-    
-    if (tableRow.didSelectRow) tableRow.didSelectRow(indexPath);
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+	AITableSection *tableSection = [self.tableSections objectAtIndex:indexPath.section];
+	AITableRow *tableRow = [tableSection.rows objectAtIndex:indexPath.row];
+
+	if (tableRow.didSelectRow) tableRow.didSelectRow(indexPath);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.tableSections count];
+	return [self.tableSections count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0;
+	return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    AITableSection *tableSection = [self.tableSections objectAtIndex:indexPath.section];
-    AITableRow *tableRow = [tableSection.rows objectAtIndex:indexPath.row];
-    
-    if (tableRow.calculateRowHeight) {
-        return tableRow.calculateRowHeight();
-    }
-    else {
-        return TABLE_DEFAULT_ROWHEIGHT;
-    }
+	AITableSection *tableSection = [self.tableSections objectAtIndex:indexPath.section];
+	AITableRow *tableRow = [tableSection.rows objectAtIndex:indexPath.row];
+
+	if (tableRow.calculateRowHeight) {
+		return tableRow.calculateRowHeight();
+	}
+	else {
+		return TABLE_DEFAULT_ROWHEIGHT;
+	}
 }
-
-
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 35, tableView.frame.size.width, 18)];
-    
-    [view setBackgroundColor:[UIColor greenColor]];
-    
-    CALayer *upperBorder = [CALayer layer];
-    upperBorder.backgroundColor = [[UIColor lightGrayColor] CGColor];
-    upperBorder.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 0.5f);
-    [view.layer addSublayer:upperBorder];
-    
-    CALayer *bottomBorder = [CALayer layer];
-    bottomBorder.frame = CGRectMake(0.0f, TABLE_DEFAULT_SECTIONHEIGHT, view.frame.size.width, 0.5f);
-    bottomBorder.backgroundColor = [[UIColor lightGrayColor] CGColor];
-    [view.layer addSublayer:bottomBorder];
-    
-    return view;
+	UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 35, tableView.frame.size.width, 18)];
+
+	[view setBackgroundColor:[UIColor greenColor]];
+
+	CALayer *upperBorder = [CALayer layer];
+	upperBorder.backgroundColor = [[UIColor lightGrayColor] CGColor];
+	upperBorder.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 0.5f);
+	[view.layer addSublayer:upperBorder];
+
+	CALayer *bottomBorder = [CALayer layer];
+	bottomBorder.frame = CGRectMake(0.0f, TABLE_DEFAULT_SECTIONHEIGHT, view.frame.size.width, 0.5f);
+	bottomBorder.backgroundColor = [[UIColor lightGrayColor] CGColor];
+	[view.layer addSublayer:bottomBorder];
+
+	return view;
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
- 
-        return TABLE_DEFAULT_SECTIONHEIGHT;
+	return TABLE_DEFAULT_SECTIONHEIGHT;
+}
 
+- (void)profileDidChange {
+	[self.mainView.tableView reloadData];
 }
 
 @end
