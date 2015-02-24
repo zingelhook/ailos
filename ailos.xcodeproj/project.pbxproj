@@ -43,6 +43,9 @@
 		4BABA8881A9A997E0032EAA3 /* AIEditProfileViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA8871A9A997E0032EAA3 /* AIEditProfileViewModel.m */; };
 		4BABA88D1A9AB1970032EAA3 /* AIProfileNutrientList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA88C1A9AB1970032EAA3 /* AIProfileNutrientList.m */; };
 		4BABA8901A9AB3B60032EAA3 /* AINutrientsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA88F1A9AB3B60032EAA3 /* AINutrientsView.m */; };
+		4BABA8F51A9CD7C20032EAA3 /* AIProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA8F41A9CD7C20032EAA3 /* AIProductDetailViewController.m */; };
+		4BABA8F91A9CD7F20032EAA3 /* AIProductListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA8F81A9CD7F20032EAA3 /* AIProductListView.m */; };
+		4BABA8FC1A9CDAA90032EAA3 /* AIProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA8FB1A9CDAA90032EAA3 /* AIProductListViewController.m */; };
 		4BAF463D1A993DFD00971EAC /* AISession.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF463C1A993DFD00971EAC /* AISession.m */; };
 		4BAF46401A995C7D00971EAC /* AIUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF463F1A995C7D00971EAC /* AIUser.m */; };
 		5DED7940B47FEDEE60099CC6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EED145A3E8DB191B41E33AE7 /* libPods.a */; };
@@ -129,6 +132,12 @@
 		4BABA88C1A9AB1970032EAA3 /* AIProfileNutrientList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIProfileNutrientList.m; sourceTree = "<group>"; };
 		4BABA88E1A9AB3B60032EAA3 /* AINutrientsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AINutrientsView.h; sourceTree = "<group>"; };
 		4BABA88F1A9AB3B60032EAA3 /* AINutrientsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AINutrientsView.m; sourceTree = "<group>"; };
+		4BABA8F31A9CD7C20032EAA3 /* AIProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIProductDetailViewController.h; sourceTree = "<group>"; };
+		4BABA8F41A9CD7C20032EAA3 /* AIProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIProductDetailViewController.m; sourceTree = "<group>"; };
+		4BABA8F71A9CD7F20032EAA3 /* AIProductListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIProductListView.h; sourceTree = "<group>"; };
+		4BABA8F81A9CD7F20032EAA3 /* AIProductListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIProductListView.m; sourceTree = "<group>"; };
+		4BABA8FA1A9CDAA90032EAA3 /* AIProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIProductListViewController.h; sourceTree = "<group>"; };
+		4BABA8FB1A9CDAA90032EAA3 /* AIProductListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIProductListViewController.m; sourceTree = "<group>"; };
 		4BAF463B1A993DFD00971EAC /* AISession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISession.h; sourceTree = "<group>"; };
 		4BAF463C1A993DFD00971EAC /* AISession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AISession.m; sourceTree = "<group>"; };
 		4BAF463E1A995C7D00971EAC /* AIUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUser.h; sourceTree = "<group>"; };
@@ -247,6 +256,7 @@
 		4B1ED84A1A7DA9060049ADFA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4BABA8F21A9CD79C0032EAA3 /* Product */,
 				4BABA8701A9A73820032EAA3 /* Profile */,
 				4B1ED8731A7ECBDA0049ADFA /* Scanner */,
 				4B1ED8541A7DAAB20049ADFA /* Home */,
@@ -317,6 +327,7 @@
 		4B1ED84E1A7DA9990049ADFA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4BABA8F61A9CD7CB0032EAA3 /* Product */,
 				4BABA8741A9A75CD0032EAA3 /* Profile */,
 				4B1ED8581A7DB8B10049ADFA /* Home */,
 				4B1ED8641A7DC12E0049ADFA /* AIBaseView.h */,
@@ -439,6 +450,26 @@
 				4BABA88A1A9AAD170032EAA3 /* AIProfileDelegate.h */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		4BABA8F21A9CD79C0032EAA3 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				4BABA8F31A9CD7C20032EAA3 /* AIProductDetailViewController.h */,
+				4BABA8F41A9CD7C20032EAA3 /* AIProductDetailViewController.m */,
+				4BABA8FA1A9CDAA90032EAA3 /* AIProductListViewController.h */,
+				4BABA8FB1A9CDAA90032EAA3 /* AIProductListViewController.m */,
+			);
+			name = Product;
+			sourceTree = "<group>";
+		};
+		4BABA8F61A9CD7CB0032EAA3 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				4BABA8F71A9CD7F20032EAA3 /* AIProductListView.h */,
+				4BABA8F81A9CD7F20032EAA3 /* AIProductListView.m */,
+			);
+			name = Product;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,6 +625,7 @@
 				4B823FCD1A99782B000ED3E0 /* AINutrient.m in Sources */,
 				4BABA8851A9A8D680032EAA3 /* AITableRow.m in Sources */,
 				4B1ED86C1A7EC4C00049ADFA /* AIUIFactory.m in Sources */,
+				4BABA8FC1A9CDAA90032EAA3 /* AIProductListViewController.m in Sources */,
 				4B823FD01A99790F000ED3E0 /* AIAllergen.m in Sources */,
 				4B1ED8691A7EB7120049ADFA /* UIColor+ailos.m in Sources */,
 				4B1ED8291A7D9EAF0049ADFA /* ailos.xcdatamodeld in Sources */,
@@ -609,6 +641,8 @@
 				4B823FDF1A998CF9000ED3E0 /* AIAllergenAdditve.m in Sources */,
 				4B823FD61A9981B7000ED3E0 /* AIProductSearchResult.m in Sources */,
 				4B1ED8721A7ECBD20049ADFA /* AIScannerViewController.m in Sources */,
+				4BABA8F51A9CD7C20032EAA3 /* AIProductDetailViewController.m in Sources */,
+				4BABA8F91A9CD7F20032EAA3 /* AIProductListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

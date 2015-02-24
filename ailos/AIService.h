@@ -20,8 +20,8 @@ typedef void (^SessionFailure)(NSError *);
 typedef void (^GetProfileSuccess)(AIProfile *);
 typedef void (^GetProfileFailure)(NSError *);
 
-typedef void (^SetProfileSuccess)(BOOL);
-typedef void (^SetProfileFailure)(NSError *);
+typedef void (^PostSuccess)(BOOL);
+typedef void (^PostFailure)(NSError *);
 
 typedef void (^SearchProductsSuccess)(AIProductSearchResult *);
 typedef void (^SearchProductsFailure)(NSError *);
@@ -35,4 +35,6 @@ typedef void (^GetAllergenAdditiveFailure)(NSError *);
 - (void)searchProducts:(SearchProductsSuccess)success failure:(SearchProductsFailure)failure session:(AISession *)session searchTerm:(NSString *)searchTerm;
 - (void)getAllergenAdditive:(GetAllergenAdditiveSuccess)success failure:(GetAllergenAdditiveFailure)failure sessionId:(NSString *)sessionId upc:(NSString *)upc property:(NSString *)property propertyType:(NSString *)propertyType;
 - (void)setProfile:(GetProfileSuccess)success failure:(GetProfileFailure)failure json:(AIProfile *)json;
+- (void)addMyIngredient:(PostSuccess)success failure:(PostFailure)failure ingredientID:(NSString *)ingredientID ingredientString:(NSString *)ingredientString;
+- (void)ingredientSearch:(SearchProductsSuccess)success failure:(SearchProductsFailure)failure session:(AISession *)session searchTerm:(NSString *)searchTerm;
 @end

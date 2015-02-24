@@ -12,6 +12,7 @@
 #import "UIColor+ailos.h"
 #import "AIAllergenAdditve.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "AIProductListViewController.h"
 
 @import AVFoundation;   // iOS7 only import style
 
@@ -111,6 +112,8 @@
 	_label.text = upcCode;
 	void (^success)(AIAllergenAdditve *) = ^void (AIAllergenAdditve *allergenAdditve) {
 		[MBProgressHUD hideHUDForView:self.view animated:YES];
+        UIViewController *controller = [[AIProductListViewController alloc] initWithNibName:nil bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
 	};
 
 	void (^failure)(NSError *) = ^void (NSError *error) {

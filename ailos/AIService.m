@@ -64,7 +64,7 @@
 	[mutableURL appendString:url];
 	[mutableURL appendString:[NSString stringWithFormat:@"?sid=%@",  session.sessionId]];
 	[mutableURL appendString:[NSString stringWithFormat:@"&f=%@", @"json"]];
-    [mutableURL appendString:[NSString stringWithFormat:@"&api_key=%@", API_KEY]];
+	[mutableURL appendString:[NSString stringWithFormat:@"&api_key=%@", API_KEY]];
 
 	[self.manager GET:mutableURL parameters:nil success: ^(AFHTTPRequestOperation *operation, id responseObject) {
 	    NSError *error = nil;
@@ -76,27 +76,73 @@
 }
 
 /*
- This is used to initially set or to update the dietary profile. Use the Set Profile (setprofile) and Add My Ingredient (addmyingredient) methods to customize your profile. It must be sent in JSON format. There is a detailed walk-through of the profile on our Getting Started page (also see FAQ: Profiles).
+   This is used to initially set or to update the dietary profile. Use the Set Profile (setprofile) and Add My Ingredient (addmyingredient) methods to customize your profile. It must be sent in JSON format. There is a detailed walk-through of the profile on our Getting Started page (also see FAQ: Profiles).
  */
+
+//TODO:use correct block here
 - (void)setProfile:(GetProfileSuccess)success failure:(GetProfileFailure)failure json:(AIProfile *)json {
 	NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, @"setprofile"];
 	NSMutableString *mutableURL = [[NSMutableString alloc]init];
 	[mutableURL appendString:url];
 	[mutableURL appendString:[NSString stringWithFormat:@"?api_key=%@", API_KEY]];
+
+	NSDictionary *JSONDictionary = [MTLJSONAdapter JSONDictionaryFromModel:json];
+	NSData *jsonData = [NSJSONSerialization dataWithJSONObject:JSONDictionary options:0 error:nil];
+	NSString *JSONstr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+
+	AFHTTPRequestOperationManager *mmanager = [AFHTTPRequestOperationManager manager];
+
+	[mmanager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	NSDictionary *parameters = @{ @"json": JSONstr };
+	[mmanager POST:mutableURL parameters:parameters success: ^(AFHTTPRequestOperation *operation, id responseObject) {
+	    NSLog(@"JSON: %@", responseObject);
+	} failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
+	    NSLog(@"Error: %@", error);
+	}];
+}
+
+/*
+A keyword search for any ingredient.
+ */
+
+- (void)ingredientSearch:(SearchProductsSuccess)success failure:(SearchProductsFailure)failure session:(AISession *)session searchTerm:(NSString *)searchTerm {
+    NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, @"ingredientsearch"];
+    NSMutableString *mutableURL = [[NSMutableString alloc]init];
+    [mutableURL appendString:url];
+    [mutableURL appendString:[NSString stringWithFormat:@"?sid=%@",  session.sessionId]];
+    [mutableURL appendString:[NSString stringWithFormat:@"&f=%@", @"json"]];
+    [mutableURL appendString:[NSString stringWithFormat:@"&q=%@", searchTerm]];
+    [mutableURL appendString:[NSString stringWithFormat:@"&n=%@", @"10"]];
+    [mutableURL appendString:[NSString stringWithFormat:@"&s=%@", @"1"]];
+    [mutableURL appendString:[NSString stringWithFormat:@"&v=%@", @"2.0"]];
     
-    NSDictionary *JSONDictionary = [MTLJSONAdapter JSONDictionaryFromModel:json];
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:JSONDictionary options:0 error:nil];
-    NSString *JSONstr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    
-    AFHTTPRequestOperationManager *mmanager = [AFHTTPRequestOperationManager manager];
-    
-    [mmanager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    NSDictionary *parameters = @{@"json": JSONstr};
-    [mmanager POST:mutableURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+    [self.manager GET:mutableURL parameters:nil success: ^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error = nil;
+        AIProductSearchResult *ps = [MTLJSONAdapter modelOfClass:AIProductSearchResult.class fromJSONDictionary:responseObject error:&error];
+        if (success) success(ps);
+    } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"adf");
     }];
+}
+/*
+ Adds an ingredient of interest to the user profile.
+ */
+- (void)addMyIngredient:(PostSuccess)success failure:(PostFailure)failure ingredientID:(NSString *)ingredientID ingredientString:(NSString *)ingredientString {
+	NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, @"admyingredient"];
+	NSMutableString *mutableURL = [[NSMutableString alloc]init];
+	[mutableURL appendString:url];
+	[mutableURL appendString:[NSString stringWithFormat:@"?api_key=%@", API_KEY]];
+	[mutableURL appendString:[NSString stringWithFormat:@"&id=%@", ingredientID]];
+	[mutableURL appendString:[NSString stringWithFormat:@"&f=%@", @"json"]];
+	[mutableURL appendString:[NSString stringWithFormat:@"&input=%@", ingredientString]];
+
+	[self.manager GET:mutableURL parameters:nil success: ^(AFHTTPRequestOperation *operation, id responseObject) {
+	  //  NSError   *error = nil;
+        NSLog(@"JSON: %@", responseObject);
+	    //if (success) success(ps);
+	} failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
+	    NSLog(@"adf");
+	}];
 }
 
 /*
@@ -104,7 +150,7 @@
  */
 
 - (void)searchProducts:(SearchProductsSuccess)success failure:(SearchProductsFailure)failure session:(AISession *)session searchTerm:(NSString *)searchTerm {
-	NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, @"getprofile"];
+	NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, @"searchprods"];
 	NSMutableString *mutableURL = [[NSMutableString alloc]init];
 	[mutableURL appendString:url];
 	[mutableURL appendString:[NSString stringWithFormat:@"?sid=%@",  session.sessionId]];
@@ -140,9 +186,9 @@
 	[mutableURL appendString:[NSString stringWithFormat:@"&api_key=%@", API_KEY]];
 
 	[self.manager GET:mutableURL parameters:nil success: ^(AFHTTPRequestOperation *operation, id responseObject) {
-	   // AIAllergenAdditve *ps = [[AIAllergenAdditve alloc]init];
-        NSError *error = nil;
-        AIAllergenAdditve *aa = [MTLJSONAdapter modelOfClass:AIAllergenAdditve.class fromJSONDictionary:responseObject error:&error];
+	    // AIAllergenAdditve *ps = [[AIAllergenAdditve alloc]init];
+	    NSError *error = nil;
+	    AIAllergenAdditve *aa = [MTLJSONAdapter modelOfClass:AIAllergenAdditve.class fromJSONDictionary:responseObject error:&error];
 
 	    if (success) success(aa);
 	} failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
