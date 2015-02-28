@@ -12,6 +12,7 @@
 #import "AIProfile.h"
 #import "AIProductSearchResult.h"
 #import "AIAllergenAdditve.h"
+#import "AILabelSearchResult.h"
 
 @interface AIService : NSObject
 typedef void (^SessionSuccess)(AISession *);
@@ -29,6 +30,9 @@ typedef void (^SearchProductsFailure)(NSError *);
 typedef void (^GetAllergenAdditiveSuccess)(AIAllergenAdditve *);
 typedef void (^GetAllergenAdditiveFailure)(NSError *);
 
+typedef void (^GetLabelSuccess)(AILabelSearchResult *);
+typedef void (^GetLabelFailure)(NSError *);
+
 
 - (void)createSession:(SessionSuccess)success failure:(SessionFailure)failure;
 - (void)getProfile:(GetProfileSuccess)success failure:(GetProfileFailure)failure session:(AISession *)session;
@@ -37,4 +41,5 @@ typedef void (^GetAllergenAdditiveFailure)(NSError *);
 - (void)setProfile:(GetProfileSuccess)success failure:(GetProfileFailure)failure json:(AIProfile *)json;
 - (void)addMyIngredient:(PostSuccess)success failure:(PostFailure)failure ingredientID:(NSString *)ingredientID ingredientString:(NSString *)ingredientString;
 - (void)ingredientSearch:(SearchProductsSuccess)success failure:(SearchProductsFailure)failure session:(AISession *)session searchTerm:(NSString *)searchTerm;
+- (void)getLabel:(GetLabelSuccess)success failure:(GetLabelFailure)failure session:(AISession *)session upc:(NSString *)upc;
 @end

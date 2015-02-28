@@ -9,7 +9,7 @@
 #import "AIService.h"
 #import "AISession.h"
 #import "AIProductSearchResult.h"
-
+#import "AILabelSearchResult.h"
 
 #define BASE_URL @"http://api.foodessentials.com/"
 #define API_KEY @"t9d9vybqyahqvhaegvz26cwt"
@@ -159,6 +159,7 @@ A keyword search for any ingredient.
 	[mutableURL appendString:[NSString stringWithFormat:@"&n=%@", @"10"]];
 	[mutableURL appendString:[NSString stringWithFormat:@"&s=%@", @"1"]];
 	[mutableURL appendString:[NSString stringWithFormat:@"&v=%@", @"2.0"]];
+    [mutableURL appendString:[NSString stringWithFormat:@"&api_key=%@", API_KEY]];
 
 	[self.manager GET:mutableURL parameters:nil success: ^(AFHTTPRequestOperation *operation, id responseObject) {
 	    NSError *error = nil;
@@ -186,7 +187,6 @@ A keyword search for any ingredient.
 	[mutableURL appendString:[NSString stringWithFormat:@"&api_key=%@", API_KEY]];
 
 	[self.manager GET:mutableURL parameters:nil success: ^(AFHTTPRequestOperation *operation, id responseObject) {
-	    // AIAllergenAdditve *ps = [[AIAllergenAdditve alloc]init];
 	    NSError *error = nil;
 	    AIAllergenAdditve *aa = [MTLJSONAdapter modelOfClass:AIAllergenAdditve.class fromJSONDictionary:responseObject error:&error];
 
@@ -194,6 +194,25 @@ A keyword search for any ingredient.
 	} failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
 	    NSLog(@"adf");
 	}];
+}
+
+
+- (void)getLabel:(GetLabelSuccess)success failure:(GetLabelFailure)failure session:(AISession *)session upc:(NSString *)upc {
+    NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, @"label"];
+    NSMutableString *mutableURL = [[NSMutableString alloc]init];
+    [mutableURL appendString:url];
+    [mutableURL appendString:[NSString stringWithFormat:@"?u=%@", upc]];
+    [mutableURL appendString:[NSString stringWithFormat:@"&sid=%@",  session.sessionId]];
+    [mutableURL appendString:[NSString stringWithFormat:@"&f=%@", @"json"]];
+    [mutableURL appendString:[NSString stringWithFormat:@"&api_key=%@", API_KEY]];
+    [mutableURL appendString:[NSString stringWithFormat:@"&appid=%@", @"demoApp_01"]];
+    [self.manager GET:mutableURL parameters:nil success: ^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error = nil;
+        AILabelSearchResult *result = [MTLJSONAdapter modelOfClass: AILabelSearchResult.class fromJSONDictionary:responseObject error:&error];
+        if (success) success(result);
+    } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"adf");
+    }];
 }
 
 @end

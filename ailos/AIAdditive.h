@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
 
-@interface AIAdditive : NSObject
+@interface AIAdditive :  MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong) NSString *additiveName;
 @property (nonatomic, strong) NSString *additiveValue;
 @property (nonatomic, strong) NSString *additiveRedIngredients;

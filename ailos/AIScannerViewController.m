@@ -13,17 +13,20 @@
 #import "AIAllergenAdditve.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "AIProductListViewController.h"
+#import "AILabelSearchResult.h"
+#import "AILabelViewController.h"
 
 @import AVFoundation;   // iOS7 only import style
 
 
 @interface AIScannerViewController () <AVCaptureMetadataOutputObjectsDelegate>
+@property (assign, nonatomic) BOOL lookupSafe;
 @property (strong, nonatomic) AVCaptureSession *captureSession;
 @property (strong, nonatomic) AVCaptureDevice *device;
 @property (strong, nonatomic) AVCaptureDeviceInput *input;
 @property (strong, nonatomic) AVCaptureMetadataOutput *output;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *prevLayer;
-
+@property (strong, nonatomic) NSString *upcCode;
 @property (strong, nonatomic) UIView *highlightView;
 @property (strong, nonatomic) UILabel *label;
 @end
@@ -33,7 +36,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-
+	_lookupSafe = YES;
 	_highlightView = [[UIView alloc] init];
 	_highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
 	_highlightView.layer.borderColor = [UIColor greenColor].CGColor;
@@ -78,6 +81,16 @@
 	[self.view bringSubviewToFront:_label];
 }
 
+- (void)viewWillAppear {
+	[super viewWillAppear:YES];
+	self.lookupSafe = YES;
+}
+
+- (void)viewDidAppear {
+	[super viewWillAppear:YES];
+	self.lookupSafe = YES;
+}
+
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
 	CGRect highlightViewRect = CGRectZero;
 	AVMetadataMachineReadableCodeObject *barCodeObject;
@@ -97,7 +110,8 @@
 		}
 
 		if (detectionString != nil) {
-			[self getProduct:detectionString];
+			NSString *cutOff = [detectionString substringFromIndex:1];
+			[self getProduct:cutOff];
 
 			break;
 		}
@@ -110,17 +124,43 @@
 
 - (void)getProduct:(NSString *)upcCode {
 	_label.text = upcCode;
-	void (^success)(AIAllergenAdditve *) = ^void (AIAllergenAdditve *allergenAdditve) {
+
+
+	void (^success)(AILabelSearchResult *) = ^void (AILabelSearchResult *result) {
 		[MBProgressHUD hideHUDForView:self.view animated:YES];
-        UIViewController *controller = [[AIProductListViewController alloc] initWithNibName:nil bundle:nil];
-        [self.navigationController pushViewController:controller animated:YES];
+		if (result.upc) {
+			UIViewController *controller = [[AILabelViewController alloc] initWithLabelSearchResult:result];
+			[self.navigationController pushViewController:controller animated:YES];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UPC not found" message:@"Could not find upc code" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
+            
+            [alert show];
+        }
 	};
 
 	void (^failure)(NSError *) = ^void (NSError *error) {
 		[MBProgressHUD hideHUDForView:self.view animated:YES];
 	};
 
-	[self.service getAllergenAdditive:success failure:failure sessionId:[AISession getInstance].sessionId upc:upcCode property:@"corn" propertyType:@"allergen"];
+	if (![self.upcCode isEqualToString:upcCode]) {
+		self.upcCode = upcCode;
+		[self.service getLabel:success failure:failure session:[AISession getInstance] upc:upcCode];
+	}
+
+	/*
+	   void (^success)(AIAllergenAdditve *) = ^void (AIAllergenAdditve *allergenAdditve) {
+	    [MBProgressHUD hideHUDForView:self.view animated:YES];
+	    UIViewController *controller = [[AIProductListViewController alloc] initWithNibName:nil bundle:nil];
+	    [self.navigationController pushViewController:controller animated:YES];
+	   };
+
+	   void (^failure)(NSError *) = ^void (NSError *error) {
+	    [MBProgressHUD hideHUDForView:self.view animated:YES];
+	   };
+
+	   [self.service getAllergenAdditive:success failure:failure sessionId:[AISession getInstance].sessionId upc:upcCode property:@"corn" propertyType:@"allergen"];
+
+	 */
 }
 
 @end

@@ -11,6 +11,9 @@
 
 @interface AIAllergen :  MTLModel <MTLJSONSerializing>
 @property (strong, nonatomic) NSString *name;
-@property (assign, nonatomic) BOOL value;
+@property (strong, nonatomic) NSString *value;
+@property (nonatomic, strong) NSString *allergenRedIngredients;
+@property (nonatomic, strong) NSString *allergenYellowIngredients;
+
 - (id)initWithJSON:(id)JSON;
 @end

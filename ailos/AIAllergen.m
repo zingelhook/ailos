@@ -13,16 +13,20 @@
 	self = [super init];
 
 	if (self) {
-		_name = [JSON objectForKey:@"name"];
-		_value = [[JSON objectForKey:@"value"] boolValue];
+		_name = [JSON objectForKey:@"allergen_name"];
+		_value = [JSON objectForKey:@"allergen_value"];
+		_allergenRedIngredients = [JSON objectForKey:@"allergen_red_ingredients"];
+		_allergenYellowIngredients = [JSON objectForKey:@"allergen_yellow_ingredients"];
 	}
 	return self;
 }
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
-			   @"name": @"name",
-			   @"value": @"value"
+			   @"name": @"allergen_name",
+			   @"value": @"allergen_value",
+			   @"allergenRedIngredients": @"allergen_red_ingredients",
+			   @"allergenYellowIngredients": @"allergen_yellow_ingredients"
 	};
 }
 

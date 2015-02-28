@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "AIBaseViewController.h"
-@interface AIScannerViewController : AIBaseViewController
+@interface AIScannerViewController : AIBaseViewController <UIAlertViewDelegate>
 
 @end
