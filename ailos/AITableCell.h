@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 com.zingelhook. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface AITableCell : NSObject
+@interface AITableCell : UITableViewCell
 @property (nonatomic, assign, getter = isEnabled) BOOL enabled;
 @property (nonatomic, assign) BOOL hasError;
 @property (strong, nonatomic) NSMutableDictionary *metrics;
+@property (strong, nonatomic) NSMutableDictionary *views;
 @end

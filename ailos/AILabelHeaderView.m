@@ -24,6 +24,7 @@
             label.text = title;
             //label.backgroundColor = [UIColor yellowColor];
             label.font = [UIFont boldSystemFontOfSize:14];
+            label.textColor = [UIColor redColor];
             label.numberOfLines = 0;
             [label setTranslatesAutoresizingMaskIntoConstraints:NO];
             label;
@@ -58,9 +59,9 @@
 - (void)addConstraints {
     [self updateViewDictionary];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[contentView(screenWidth)]|" options:0 metrics:self.metrics views:self.views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[contentView(100)]|" options:0 metrics:nil views:self.views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[contentView(200)]|" options:0 metrics:nil views:self.views]];
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[titleLabel]-|" options:0 metrics:nil views:self.views]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[titleLabel]" options:0 metrics:nil views:self.views]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[titleLabel]-|" options:0 metrics:nil views:self.views]];
 }
 
 

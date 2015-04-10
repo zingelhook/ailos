@@ -14,6 +14,7 @@
 #import "AILabelHeaderView.h"
 #import "AIAdditive.h"
 #import "AILabelViewModel.h"
+#import "AILabelCellView.h"
 
 @interface AILabelViewController ()
 
@@ -54,11 +55,11 @@
 	[self.view setNeedsUpdateConstraints];
 }
 
--(AILabelViewModel *)viewModel{
-    if(!_viewModel){
-        _viewModel = [[AILabelViewModel alloc]initWithAILabelSearchResult:self.result];
-    }
-    return _viewModel;
+- (AILabelViewModel *)viewModel {
+	if (!_viewModel) {
+		_viewModel = [[AILabelViewModel alloc]initWithAILabelSearchResult:self.result];
+	}
+	return _viewModel;
 }
 
 - (AILabelListView *)mainView {
@@ -98,9 +99,9 @@
 
 		if (cell == nil) {
 			AIAllergen *allergen = [self.viewModel.allergens objectAtIndex:[indexPath row]];
-			cell = [[UITableViewCell alloc]init];
-			cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", allergen.name, allergen.value];
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", allergen.allergenRedIngredients];
+			cell = [[AILabelCellView alloc]initWithAllergen:allergen];
+			[cell setNeedsUpdateConstraints];
+		
 		}
 	}
 	else {
@@ -127,7 +128,28 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 85;
+	if (indexPath.section == 0) {
+		AIAllergen *allergen = [self.result.allergens objectAtIndex:[indexPath row]];
+        NSString *ingredients = [NSString stringWithFormat:@"%@ %@", allergen.allergenRedIngredients, allergen.allergenYellowIngredients];
+		NSDictionary *attributes = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize:18] };
+		CGRect rect1 = [allergen.name boundingRectWithSize:CGSizeMake(self.view.frame.size.width -30, CGFLOAT_MAX)
+		                                           options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+		                                        attributes:attributes
+		                                           context:nil];
+		CGRect rect2 = [ingredients boundingRectWithSize:CGSizeMake(self.view.frame.size.width - 20, CGFLOAT_MAX)
+		                                                             options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+		                                                          attributes:attributes
+		                                                             context:nil];
+
+
+
+		CGFloat height = MAX((rect1.size.height + rect2.size.height + 20), 80.0f);
+
+		return height;
+	}
+	else {
+		return 90;
+	}
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

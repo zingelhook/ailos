@@ -51,6 +51,7 @@
 		4BABA9071A9D24BA0032EAA3 /* AILabelListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA9061A9D24BA0032EAA3 /* AILabelListView.m */; };
 		4BABA90A1A9D64400032EAA3 /* AILabelHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA9091A9D64400032EAA3 /* AILabelHeaderView.m */; };
 		4BABA90D1A9D77150032EAA3 /* AILabelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA90C1A9D77150032EAA3 /* AILabelViewModel.m */; };
+		4BABA9481AA182D90032EAA3 /* AILabelCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA9471AA182D90032EAA3 /* AILabelCellView.m */; };
 		4BAF463D1A993DFD00971EAC /* AISession.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF463C1A993DFD00971EAC /* AISession.m */; };
 		4BAF46401A995C7D00971EAC /* AIUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF463F1A995C7D00971EAC /* AIUser.m */; };
 		5DED7940B47FEDEE60099CC6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EED145A3E8DB191B41E33AE7 /* libPods.a */; };
@@ -153,6 +154,8 @@
 		4BABA9091A9D64400032EAA3 /* AILabelHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AILabelHeaderView.m; sourceTree = "<group>"; };
 		4BABA90B1A9D77150032EAA3 /* AILabelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AILabelViewModel.h; sourceTree = "<group>"; };
 		4BABA90C1A9D77150032EAA3 /* AILabelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AILabelViewModel.m; sourceTree = "<group>"; };
+		4BABA9461AA182D90032EAA3 /* AILabelCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AILabelCellView.h; sourceTree = "<group>"; };
+		4BABA9471AA182D90032EAA3 /* AILabelCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AILabelCellView.m; sourceTree = "<group>"; };
 		4BAF463B1A993DFD00971EAC /* AISession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISession.h; sourceTree = "<group>"; };
 		4BAF463C1A993DFD00971EAC /* AISession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AISession.m; sourceTree = "<group>"; };
 		4BAF463E1A995C7D00971EAC /* AIUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUser.h; sourceTree = "<group>"; };
@@ -509,6 +512,8 @@
 				4BABA9061A9D24BA0032EAA3 /* AILabelListView.m */,
 				4BABA9081A9D64400032EAA3 /* AILabelHeaderView.h */,
 				4BABA9091A9D64400032EAA3 /* AILabelHeaderView.m */,
+				4BABA9461AA182D90032EAA3 /* AILabelCellView.h */,
+				4BABA9471AA182D90032EAA3 /* AILabelCellView.m */,
 			);
 			name = Label;
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 				4B1ED8691A7EB7120049ADFA /* UIColor+ailos.m in Sources */,
 				4B1ED8291A7D9EAF0049ADFA /* ailos.xcdatamodeld in Sources */,
 				4B823FDC1A9988C8000ED3E0 /* AIProcingredient.m in Sources */,
+				4BABA9481AA182D90032EAA3 /* AILabelCellView.m in Sources */,
 				4B823FD91A998780000ED3E0 /* AIAdditive.m in Sources */,
 				4BABA8FF1A9CFBA80032EAA3 /* AILabelSearchResult.m in Sources */,
 				4B1ED85B1A7DB8D50049ADFA /* AIHomeView.m in Sources */,

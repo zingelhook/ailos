@@ -24,7 +24,7 @@
 		_titleLabel = ({
 			UILabel *label = [[UILabel alloc]init];
 			label.text = title;
-			label.font = [UIFont boldSystemFontOfSize:14];
+			label.font = [UIFont boldSystemFontOfSize:18];
 			label.numberOfLines = 0;
 			[label setTranslatesAutoresizingMaskIntoConstraints:NO];
 			label;
@@ -74,7 +74,7 @@
 	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[contentView]|" options:0 metrics:nil views:self.views]];
 	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView]|" options:0 metrics:nil views:self.views]];
 	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[titleLabel]-|" options:0 metrics:nil views:self.views]];
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[titleLabel]-[tableView]|" options:0 metrics:nil views:self.views]];
+	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[titleLabel]-20-[tableView]|" options:0 metrics:nil views:self.views]];
 }
 
 @end
